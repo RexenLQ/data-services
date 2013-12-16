@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration>
+    <BatchSize>1000</BatchSize>
+    <EntityName>com.rexen.od.beans.RelatedAccountBean</EntityName>
+    <ExternalId>Id</ExternalId>
+    <FileName>related_account_import.csv</FileName>
+    <Database>gmac</Database>
+    <Max>100000</Max>
+    <Fields>
+        <ColumnName>Id</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>Id</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>account_external_idn</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>accountexternalsystemid</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>role</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>role</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>reverse_role</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>reverserole</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>related_account_external_id</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>relatedaccountexternalsystemid</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>begin_date</ColumnName>
+        <DataType>Date</DataType>
+        <Format>yyyy-mm-dd</Format>
+        <FieldName>starttime</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>end_date</ColumnName>
+        <DataType>Date</DataType>
+        <Format>yyyy-mm-dd</Format>
+        <FieldName>endtime</FieldName>
+    </Fields>
+
+ 
+</Configuration>

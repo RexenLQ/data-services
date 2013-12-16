@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <BatchSize>1000</BatchSize>
+    <EntityName>UserPosition</EntityName>
+    <FileName>user_position_import.csv</FileName>
+    <ExternalId>ExternalId</ExternalId>
+    <Database>crm_mysql</Database>
+    <Max>100000</Max>
+    <Fields>
+        <ColumnName>ExternalId</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>ExternalId</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>PositionExternalId</ColumnName>
+        <DataType>Lookup</DataType>
+        <FieldName>positionId</FieldName>
+        <LookupEntityName>Crmuser</LookupEntityName>
+        <LookupFieldName>Code</LookupFieldName>
+        <TargetFieldName>Id</TargetFieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>EmployeeNumber</ColumnName>
+        <DataType>Lookup</DataType>
+        <FieldName>userId</FieldName>
+        <LookupEntityName>Userinfo</LookupEntityName>
+        <LookupFieldName>employeeNumber</LookupFieldName>
+        <TargetFieldName>Id</TargetFieldName>
+    </Fields>
+</Configuration>
