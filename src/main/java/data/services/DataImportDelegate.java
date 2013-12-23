@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package data.services;
 
+import data.services.configuration.Configuration;
 import com.rexen.crm.beans.DataExchangeTeample;
 
 import java.io.IOException;
@@ -68,9 +70,8 @@ public class DataImportDelegate
     return config;
   }
 
-  public void load(String template, String filePath) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException,
-           JAXBException, IOException, Exception
-  {    // 模板名 文件路径
+  public void load(String template, String filePath) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, JAXBException, IOException, Exception
+  {
     Configuration config = getConfiguration(template);
 
     if (config != null)
@@ -83,5 +84,3 @@ public class DataImportDelegate
     }
   }
 }
-
-
