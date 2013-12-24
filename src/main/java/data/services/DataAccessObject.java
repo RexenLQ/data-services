@@ -16,9 +16,6 @@
 
 package data.services;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
-
 import org.eclipse.persistence.jpa.JpaEntityManager;
 import org.eclipse.persistence.jpa.JpaHelper;
 
@@ -35,12 +32,10 @@ import javax.persistence.Query;
 
 public class DataAccessObject
 {
-
-  static Logger logger = Logger.getLogger("dataloader");
   private boolean transaction = true;
   private JpaEntityManager jpa;
 
-  public DataAccessObject(String unitName)
+  public DataAccessObject(String unitName) throws Exception
   {
     try
     {
@@ -49,15 +44,13 @@ public class DataAccessObject
     }
     catch (Exception e)
     {
-      logger.log(Priority.ERROR, "DataAccessObject(String unitName:" + unitName + ")", e);
-
       throw e;
     }
   }
 
   public void update(Object[] data, String[] keys)
     throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException,
-           NoSuchMethodException
+           NoSuchMethodException, Exception
   {
     if ((data != null) && (data.length > 0))
     {
@@ -83,10 +76,9 @@ public class DataAccessObject
 
         commit();
       }
-      catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException e)
+      catch (Exception e)
       {
         rollback();
-        logger.log(Priority.ERROR, "DataObjectAccess.update(Object o, String[] keys)", e);
 
         throw e;
       }
@@ -119,7 +111,7 @@ public class DataAccessObject
 
   public void delete(Object[] data, String[] keys) throws Exception
   {
-    ArrayList<Object> buffer = new ArrayList<>();
+    ArrayList<Object> buffer = new ArrayList<Object>();
 
     for (Object o : data)
     {
@@ -137,7 +129,7 @@ public class DataAccessObject
     delete(buffer.toArray());
   }
 
-  public void append(Object[] data)
+  public void append(Object[] data) throws Exception
   {
     if ((data != null) && (data.length > 0))
     {
@@ -155,7 +147,6 @@ public class DataAccessObject
       catch (Exception e)
       {
         rollback();
-        logger.log(Priority.ERROR, "DataObjectAccess.append(Object[] data)", e);
 
         throw e;
       }
@@ -199,8 +190,8 @@ public class DataAccessObject
   {
     if ((objects != null) && (objects.length > 0))
     {
-      ArrayList<Object> buffer1 = new ArrayList<>();
-      ArrayList<Object> buffer2 = new ArrayList<>();
+      ArrayList<Object> buffer1 = new ArrayList<Object>();
+      ArrayList<Object> buffer2 = new ArrayList<Object>();
 
       for (Object o : objects)
       {
@@ -226,8 +217,6 @@ public class DataAccessObject
         }
         catch (Exception e)
         {
-          logger.log(Priority.ERROR, "DataObjectAccess.merge(Object[] objects, String[] keys)", e);
-
           throw e;
         }
       }
@@ -238,10 +227,8 @@ public class DataAccessObject
         {
           update(buffer2.toArray(), keys);
         }
-        catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException e)
+        catch (Exception e)
         {
-          logger.log(Priority.ERROR, "DataObjectAccess.merge(Object[] objects, String[] keys)", e);
-
           throw e;
         }
       }
@@ -286,7 +273,6 @@ public class DataAccessObject
     catch (Exception e)
     {
       rollback();
-      logger.log(Priority.ERROR, "DataObjectAccess.execute(String sql)", e);
 
       throw e;
     }
@@ -300,14 +286,14 @@ public class DataAccessObject
   private void copy(Object o1, Object o2, String[] properties)
     throws IllegalAccessException, IllegalArgumentException, InvocationTargetException
   {
-    HashMap<String, Method> o1m = new HashMap<>();
+    HashMap<String, Method> o1m = new HashMap<String, Method>();
 
     for (Method m : o1.getClass().getMethods())
     {
       o1m.put(m.getName(), m);
     }
 
-    HashMap<String, Method> o2m = new HashMap<>();
+    HashMap<String, Method> o2m = new HashMap<String, Method>();
 
     for (Method m : o2.getClass().getMethods())
     {

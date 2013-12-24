@@ -39,7 +39,7 @@ public class DataImport
   private DataAccessObject dao;
   private Configuration config = null;
 
-  public DataImport(String configuration) throws JAXBException
+  public DataImport(String configuration) throws JAXBException, Exception
   {
     File file = new File(configuration);
     JAXBContext context = JAXBContext.newInstance(Configuration.class);
@@ -364,7 +364,7 @@ public class DataImport
     return method;
   }
 
-  private void log(String objectName, String methodName, String stackTrace, String message)
+  private void log(String objectName, String methodName, String stackTrace, String message) throws Exception
   {
     LogMessage logMessage;
     logMessage = new LogMessage();

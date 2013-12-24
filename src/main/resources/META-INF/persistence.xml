@@ -64,7 +64,6 @@
     <class>com.rexen.crm.beans.Userinfo</class>
     <class>com.rexen.crm.integration.LogMessage</class>
     <class>com.rexen.crm.beans.UserPosition</class>
-    <class>com.rexen.od.beans.RelatedAccountBean</class>
     <shared-cache-mode>ALL</shared-cache-mode>
     <validation-mode>NONE</validation-mode>
     <properties>
@@ -74,14 +73,15 @@
       <property name="javax.persistence.jdbc.user" value="crm"/>
     </properties>
   </persistence-unit>
-  <persistence-unit name="gmac" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="mcpc_des2" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <shared-cache-mode>ALL</shared-cache-mode>
+    <class>com.mcpc.beans.AuditTrailBean</class>
+    <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/des2_gmac"/>
-      <property name="javax.persistence.jdbc.password" value="des2_gmac"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://122.200.77.171/des2"/>
+      <property name="javax.persistence.jdbc.password" value="des2"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.user" value="des2_gmac"/>
+      <property name="javax.persistence.jdbc.user" value="des2"/>
     </properties>
   </persistence-unit>
 </persistence>

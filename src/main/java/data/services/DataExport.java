@@ -48,7 +48,7 @@ public class DataExport
   private DataAccessObject dao;
   private Configuration config = null;
 
-  public DataExport(String configuration) throws JAXBException
+  public DataExport(String configuration) throws JAXBException, Exception
   {
     File file = new File(configuration);
     JAXBContext context = JAXBContext.newInstance(Configuration.class);
@@ -71,7 +71,7 @@ public class DataExport
   {
     Object example = null;
 
-    String class_name = "com.rexen.crm.beans." + config.getEntityName();
+    String class_name = config.getEntityName();
     Class c = Class.forName(class_name);
     example = c.newInstance();
 
@@ -120,8 +120,8 @@ public class DataExport
 
       writer.flush();
 
-      ByteArrayOutputStream out = new ByteArrayOutputStream();
-      //FileOutputStream out = new FileOutputStream(config.getEntityName() + ".zip");
+      //ByteArrayOutputStream out = new ByteArrayOutputStream();
+      FileOutputStream out = new FileOutputStream(config.getEntityName() + ".zip");
       
       try (ZipOutputStream zip_output_stream = new ZipOutputStream(out))
       {
@@ -135,10 +135,10 @@ public class DataExport
         zip_output_stream.flush();
       }
 
-      //out.flush();
-      //out.close();
+      out.flush();
+      out.close();
 
-      return out.toByteArray();
+      return null;//out.toByteArray();
     }
 
     return null;
@@ -312,7 +312,7 @@ public class DataExport
     return methods.get(methodName.toLowerCase());
   }
   
-  private void log(String objectName, String methodName, String stackTrace, String message)
+  private void log(String objectName, String methodName, String stackTrace, String message) throws Exception
   {
     LogMessage logMessage;
     logMessage = new LogMessage();

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration>
+    <BatchSize>1000</BatchSize>
+    <EntityName>com.mcpc.beans.AuditTrailBean</EntityName>
+    <ExternalId>DbId</ExternalId>
+    <FileName>/Users/Ralf/NetBeansProjects/data-services/mcpc/audittrail.csv</FileName>
+    <Database>mcpc_des2</Database>
+    <Max>100000</Max>
+    <Encoded>GBK</Encoded>
+    <Fields>
+        <ColumnName>DbId</ColumnName>
+        <DataType>Integer</DataType>
+        <FieldName>DbId</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>Created</ColumnName>
+        <DataType>Date</DataType>
+        <FieldName>Created</FieldName>
+        <Format>yyyy-MM-dd</Format>
+    </Fields>
+
+   <Fields>
+        <ColumnName>message</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>message</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>Module</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>Module</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>ObjectId</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>ObjectId</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>Operation</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>Operation</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>UserId</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>UserId</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>UserName</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>UserName</FieldName>
+    </Fields>
+</Configuration>

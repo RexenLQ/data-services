@@ -36,7 +36,7 @@ public class DataImportDelegate
 
   private DataAccessObject dao;
 
-  public DataImportDelegate()
+  public DataImportDelegate() throws Exception
   {
     dao = new DataAccessObject("crm_mysql");
   }
