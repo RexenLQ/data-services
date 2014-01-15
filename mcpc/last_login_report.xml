@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration>
+    <BatchSize>1000</BatchSize>
+    <EntityName>com.mcpc.beans.LastLoginReportBean</EntityName>
+    <ExternalId>externalsystemid</ExternalId>
+    <FileName>LastLoginReport</FileName>
+    <Database>mcpc_des2</Database>
+    <Max>100000</Max>
+    <Encoded>UTF8</Encoded>
+
+    <Fields>
+        <ColumnName>岗位代码</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>externalsystemid</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>最后登录日期</ColumnName>
+        <DataType>Date</DataType>
+        <FieldName>lastlogin</FieldName>
+        <Format>yyyy-MM-dd</Format>
+    </Fields>
+
+    <Fields>
+        <ColumnName>代表姓名</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>fullname</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>产品线</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>custompicklist0</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>区域1</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>custompicklist1</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>区域2</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>custompicklist2</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>经理姓名</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>managerfullname</FieldName>
+    </Fields>
+</Configuration>

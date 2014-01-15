@@ -3,12 +3,12 @@
     <BatchSize>1000</BatchSize>
     <EntityName>com.mcpc.beans.AuditTrailBean</EntityName>
     <ExternalId>DbId</ExternalId>
-    <FileName>/Users/Ralf/NetBeansProjects/data-services/mcpc/audittrail.csv</FileName>
+    <FileName>AuditTrail</FileName>
     <Database>mcpc_des2</Database>
     <Max>100000</Max>
-    <Encoded>GBK</Encoded>
+    <Encoded>UTF8</Encoded>
     <Fields>
-        <ColumnName>DbId</ColumnName>
+        <ColumnName>Id</ColumnName>
         <DataType>Integer</DataType>
         <FieldName>DbId</FieldName>
     </Fields>
@@ -21,9 +21,9 @@
     </Fields>
 
    <Fields>
-        <ColumnName>message</ColumnName>
+        <ColumnName>Message</ColumnName>
         <DataType>String</DataType>
-        <FieldName>message</FieldName>
+        <FieldName>Message</FieldName>
     </Fields>
 
     <Fields>
@@ -33,7 +33,7 @@
     </Fields>
 
     <Fields>
-        <ColumnName>ObjectId</ColumnName>
+        <ColumnName>Object Id</ColumnName>
         <DataType>String</DataType>
         <FieldName>ObjectId</FieldName>
     </Fields>
@@ -43,12 +43,12 @@
         <FieldName>Operation</FieldName>
     </Fields>
     <Fields>
-        <ColumnName>UserId</ColumnName>
+        <ColumnName>User Id</ColumnName>
         <DataType>String</DataType>
         <FieldName>UserId</FieldName>
     </Fields>
     <Fields>
-        <ColumnName>UserName</ColumnName>
+        <ColumnName>User Name</ColumnName>
         <DataType>String</DataType>
         <FieldName>UserName</FieldName>
     </Fields>

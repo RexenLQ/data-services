@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration>
+    <BatchSize>1000</BatchSize>
+    <EntityName>com.mcpc.beans.AuditTrailReportBean</EntityName>
+    <ExternalId>Id</ExternalId>
+    <FileName>LoginReport</FileName>
+    <Database>mcpc_des2</Database>
+    <Max>100000</Max>
+    <Encoded>UTF8</Encoded>
+
+    <Fields>
+        <ColumnName>Id</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>Id</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>年月</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>ym</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>数量</ColumnName>
+        <DataType>Integer</DataType>
+        <FieldName>count</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>代表姓名</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>username</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>代表岗位代码</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>externalsystemid</FieldName>
+    </Fields>
+
+    <Fields>
+        <ColumnName>区域</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>custompicklist2</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>经理姓名</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>managerfullname</FieldName>
+    </Fields>
+    <Fields>
+        <ColumnName>类型</ColumnName>
+        <DataType>String</DataType>
+        <FieldName>item</FieldName>
+    </Fields>
+</Configuration>

@@ -73,6 +73,3 @@ public class DataObject
     }
   }
 }
-
-
-//~ Formatted by Jindent --- http://www.jindent.com

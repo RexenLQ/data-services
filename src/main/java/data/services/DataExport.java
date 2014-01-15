@@ -121,12 +121,12 @@ public class DataExport
       writer.flush();
 
       //ByteArrayOutputStream out = new ByteArrayOutputStream();
-      FileOutputStream out = new FileOutputStream(config.getEntityName() + ".zip");
+      FileOutputStream out = new FileOutputStream(config.getFileName() + ".zip");
       
       try (ZipOutputStream zip_output_stream = new ZipOutputStream(out))
       {
         zip_output_stream.setLevel(9);
-        ZipEntry zip_entry = new ZipEntry(config.getEntityName() + ".csv");
+        ZipEntry zip_entry = new ZipEntry(config.getFileName() + ".csv");
 
         zip_output_stream.putNextEntry(zip_entry);
 
@@ -153,7 +153,7 @@ public class DataExport
       String method_name = "get" + field.getFieldName();
 
       Method m = queryMethod(o.getClass(), method_name);
-
+      
       Object value = m.invoke(o, new Object[]
       {
       });
@@ -301,7 +301,7 @@ public class DataExport
   public Method queryMethod(Class c, String methodName)
   {
 
-    System.out.println("query method: " + c.getName() + "." + methodName);
+    //System.out.println("query method: " + c.getName() + "." + methodName);
     HashMap<String, Method> methods = new HashMap<>();
 
     for (Method m : c.getMethods())

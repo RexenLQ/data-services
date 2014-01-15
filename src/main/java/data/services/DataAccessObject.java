@@ -39,7 +39,9 @@ public class DataAccessObject
   {
     try
     {
+      System.out.println("load database " + unitName + "...");
       jpa = JpaHelper.getEntityManager(Persistence.createEntityManagerFactory(unitName).createEntityManager());
+      
       jpa.setFlushMode(FlushModeType.COMMIT);
     }
     catch (Exception e)
